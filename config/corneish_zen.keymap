@@ -21,7 +21,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_3 {
+        layer_0 {
+            label = "CLMKDH";
+            
             bindings = <
  &kp TAB  &kp Q  &kp W  &kp F  &kp P      &kp B        &kp J  &kp L      &kp U    &kp Y   &kp SQT  &kp CAPSLOCK
 &kp BSPC  &kp A  &kp R  &kp S  &kp T      &kp G        &kp M  &kp N      &kp E    &kp I     &kp O       &kp RET
@@ -30,7 +32,7 @@
             >;
         };
 
-        default_layer {
+        layer_1 {
             label = "QWERTY";
 
             // --------------------------------------------------------------------------------
@@ -47,8 +49,8 @@
             >;
         };
 
-        lower_layer {
-            label = "NUMBER";
+        layer_2 {
+            label = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
@@ -64,7 +66,9 @@
             >;
         };
 
-        layer_4 {
+        layer_3 {
+            label = "NAV";
+            
             bindings = <
 &trans  &kp LC(LS(TAB))   &kp A    &trans  &kp LC(TAB)  &kp INS    &trans     &trans     &trans    &trans    &trans  &trans
 &trans         &kp LEFT  &kp UP  &kp DOWN    &kp RIGHT  &kp DEL    &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp RGUI  &trans
@@ -73,7 +77,20 @@
             >;
         };
 
+        layer_4 {
+            label = "MOUSE";
+            
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
         layer_5 {
+            label = "NUMBER";
+            
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -83,15 +100,8 @@
         };
 
         layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
+            label = "FUNC";
+            
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans        &trans        &trans        &trans      &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans        &trans        &trans        &trans      &trans

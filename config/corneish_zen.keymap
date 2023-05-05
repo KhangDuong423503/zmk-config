@@ -109,6 +109,91 @@
                 <&sys_reset>,
                 <&bootloader>;
         };
+        sel_words: sel_words {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SEL_WORDS";
+            bindings =
+                <&sel_word>,
+                <&sel_word_cont>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sel_lines: sel_lines {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SEL_LINES";
+            bindings =
+                <&sel_line>,
+                <&sel_line_cont>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    macros {
+        sel_word: sel_word {
+            compatible = "zmk,behavior-macro";
+            label = "SEL_WORD";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT &kp LEFT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>;
+        };
+        sel_line: sel_line {
+            compatible = "zmk,behavior-macro";
+            label = "SEL_LINE";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp END>,
+                <&macro_release>,
+                <&kp LSHFT>;
+        };
+        sel_word_cont: sel_word_cont {
+            compatible = "zmk,behavior-macro";
+            label = "SEL_WORD_CONT";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LSHFT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL &kp LSHFT>;
+        };
+        sel_line_cont: sel_line_cont {
+            compatible = "zmk,behavior-macro";
+            label = "SEL_LINE_CONT";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp DOWN>,
+                <&macro_release>,
+                <&kp LSHFT>;
+        };
+        triple_zero: triple_zero {
+            compatible = "zmk,behavior-macro";
+            label = "TRIPLE_ZERO";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp N0>;
+        };
     };
 
     keymap {
@@ -175,10 +260,10 @@
             //                    |     | mo6 | ... |   | SPC | mo3 | APP |
 
             bindings = <
-&trans  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)    &kp INS     &none      &none      &none      &none     &none   &none
-&trans         &kp LEFT        &kp UP       &kp DOWN    &kp RIGHT    &kp DEL     &none  &kp RSHFT  &kp RCTRL   &kp RALT  &kp RWIN  &trans
-&trans        &kp LC(Z)     &kp LC(X)      &kp LC(C)    &kp LC(V)  &kp LC(A)     &none   &kp HOME  &kp PG_DN  &kp PG_UP   &kp END    &rst
-                                               &none        &mo 6      &none    &trans     &trans  &kp K_APP
+&trans  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)     &kp INS     &none      &none      &none      &none     &none   &none
+&trans         &kp LEFT        &kp UP       &kp DOWN    &kp RIGHT     &kp DEL     &none  &kp RSHFT  &kp RCTRL   &kp RALT  &kp RWIN  &trans
+&trans        &kp LC(Z)     &kp LC(X)      &kp LC(C)    &kp LC(V)   &kp LC(A)     &none   &kp HOME  &kp PG_DN  &kp PG_UP   &kp END    &rst
+                                          &sel_lines        &mo 6  &sel_words    &trans     &trans  &kp K_APP
             >;
         };
 
@@ -209,10 +294,10 @@
             //                    | ... |  0  |  =  |   | SPC |     | mo5 |
 
             bindings = <
-&kp PRCNT  &kp MINUS  &kp N9  &kp N8  &kp N7  &kp SLASH     &none      &none     &kp LT    &kp GT     &none   &none
-   &trans   &kp PLUS  &kp N6  &kp N5  &kp N4   &kp STAR     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RWIN  &trans
-   &trans  &kp ENTER  &kp N3  &kp N2  &kp N1    &kp DOT     &none      &none  &kp COMMA   &kp DOT     &none   &none
-                               &none  &kp N0  &kp EQUAL    &trans      &none     &trans
+&kp PRCNT  &kp MINUS  &kp N9        &kp N8  &kp N7  &kp SLASH     &none      &none     &kp LT    &kp GT     &none   &none
+   &trans   &kp PLUS  &kp N6        &kp N5  &kp N4   &kp STAR     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RWIN  &trans
+   &trans  &kp ENTER  &kp N3        &kp N2  &kp N1    &kp DOT     &none      &none  &kp COMMA   &kp DOT     &none   &none
+                              &triple_zero  &kp N0  &kp EQUAL    &trans      &none     &trans
             >;
         };
 

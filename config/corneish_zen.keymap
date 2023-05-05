@@ -118,10 +118,10 @@
             label = "CLMKDH";
 
             // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | CAPS |
+            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | CAPW |
             // | BKSP |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
-            // |  ESC |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  ;  | to1  |
-            //                    | mo4 | mo2 | SFT |   | SPC | mo3 | mo5 |
+            // |  ESC |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,! -  .? |  ;  | to1  |
+            //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
 
             bindings = <
  &kp TAB        &kp Q        &kp W         &kp F         &kp P       &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT       &cwc
@@ -135,10 +135,10 @@
             label = "QWERTY";
 
             // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | CAPS |
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | CAPW |
             // | BKSP |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  | ENT  |
-            // |  ESC |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  ;  | to0  |
-            //                    | mo4 | mo2 | SFT |   | SPC | mo3 | mo5 |
+            // |  ESC |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,! -  .? |  ;  | to0  |
+            //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
 
             bindings = <
 &trans        &kp Q        &kp W         &kp E         &kp R   &kp T     &kp Y         &kp U         &kp I        &kp O          &kp P  &trans
@@ -152,10 +152,10 @@
             label = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
-            // |  ... |  '  |  <  |  >  |  "  |  .  |   |  &  |  D  |  [  |  ]  |  %  | CAPS |
+            // |  ... |  '  |  <  |  >  |  "  |  .  |   |  &  |     |  [  |  ]  |  %  | CAPS |
             // | BKSP |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | ENT  |
-            // |      |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |      |
-            //                    |     | mo2 |     |   |     | mo6 |     |
+            // |  RST |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |      |
+            //                    |     | mo2 |     |   |     | mo6 | RPT |
 
             bindings = <
  &none    &kp SQT     &kp LT    &kp GT    &kp DQT    &kp DOT     &kp AMPS      &none     &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
@@ -169,9 +169,9 @@
             label = "NAV";
 
             // --------------------------------------------------------------------------------
-            // |  TAB | CSt | ... | ... |  Ct | INS |   |     | ... | ... | ... |     | ...  |
+            // |  TAB | CSt | A<- | A-> |  Ct | INS |   |     | ... | ... | ... |     | ...  |
             // | BKSP | LFT |  UP | DWN | RGT | DEL |   |     | SFT | CTL | ALT | WIN | ENT  |
-            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | HME | PGD | PGU | END |      |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | HME | PGD | PGU | END | RST  |
             //                    |     | mo6 | ... |   | SPC | mo3 | APP |
 
             bindings = <
@@ -220,8 +220,8 @@
             label = "FUNC";
 
             // --------------------------------------------------------------------------------
-            // |      | F12 |  F9 |  F8 |  F7 | NUM |   |     |     |     |     |     | ...  |
-            // |      | F11 |  F6 |  F5 |  F4 | SCR |   |     | SFT | CTL | ALT | WIN |      |
+            // |      | F12 |  F9 |  F8 |  F7 | NUM |   | USB |     |     |     |     | ...  |
+            // |      | F11 |  F6 |  F5 |  F4 | SCR |   | BLE | SFT | CTL | ALT | WIN |      |
             // |      | F10 |  F3 |  F2 |  F1 | PSE |   | BT0 | BT1 | BT2 | BT3 | BT4 | BTCL |
             //                    |     | mo6 |     |   |     | mo6 |     |
 

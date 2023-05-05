@@ -23,6 +23,13 @@
 
         layer_0 {
             label = "CLMKDH";
+            
+            // --------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | CAPS |
+            // | BKSP |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
+            // |  ESC |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  ;  | to1  |
+            //                    | mo4 | mo2 | SFT |   | SPC | mo3 | mo5 |
+            
             bindings = <
  &kp TAB  &kp Q  &kp W  &kp F  &kp P      &kp B        &kp J  &kp L      &kp U    &kp Y   &kp SQT  &kp CAPSLOCK
 &kp BSPC  &kp A  &kp R  &kp S  &kp T      &kp G        &kp M  &kp N      &kp E    &kp I     &kp O       &kp RET
@@ -35,10 +42,10 @@
             label = "QWERTY";
 
             // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | CAPS |
+            // | BKSP |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  | ENT  |
+            // |  ESC |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  ;  | to0  |
+            //                    | mo4 | mo2 | SFT |   | SPC | mo3 | mo5 |
 
             bindings = <
 &trans  &kp Q  &kp W   &kp E   &kp R   &kp T     &kp Y   &kp U   &kp I   &kp O           &kp P  &trans
@@ -52,10 +59,10 @@
             label = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |  ... |  '  |  <  |  >  |  "  |  .  |   |  &  |  D  |  [  |  ]  |  %  | CAPS |
+            // | BKSP |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | ENT  |
+            // |      |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |      |
+            //                    |     | mo2 |     |   |     | mo6 |     |
 
             bindings = <
  &none    &kp SQT  &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES    &kp DOT     &kp AMPS      &kp D  &kp LBKT  &kp RBKT  &kp PERCENT  &kp CAPS
@@ -67,6 +74,13 @@
 
         layer_3 {
             label = "NAV";
+            
+            // --------------------------------------------------------------------------------
+            // |  TAB | CSt | ... | ... |  Ct | INS |   |     | ... | ... | ... |     | ...  |
+            // | BKSP | LFT |  UP | DWN | RGT | DEL |   |     | SFT | CTL | ALT | WIN | ENT  |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | HME | PGD | PGU | END |      |
+            //                    |     | mo6 | ... |   | SPC | mo3 | APP |
+            
             bindings = <
 &trans  &kp LC(LS(TAB))      &none      &none  &kp LC(TAB)    &kp INS     &none      &none      &none      &none     &none   &none
 &trans         &kp LEFT     &kp UP   &kp DOWN    &kp RIGHT    &kp DEL     &none  &kp LSHFT  &kp LCTRL   &kp LALT  &kp RGUI  &trans
@@ -77,6 +91,13 @@
 
         layer_4 {
             label = "MOUSE";
+            
+            // --------------------------------------------------------------------------------
+            // |  ... | ... | ... | ... | ... | ... |   |     | BR- | VL- | VL+ | BR+ | PRSC |
+            // | BKSP | WIN | ALT | CTL | SFT | DEL |   | PRV | ... | ... | ... | ... | NXT  |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | ... | ... | ... | ... |      |
+            //                    | mo4 | ... | ... |   | STP | PLY | MUT |
+            
             bindings = <
  &none         &none         &none      &none       &none      &none         &none  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &kp PRINTSCREEN
 &trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHIFT    &kp DEL    &kp C_PREV                 &none         &none         &none                 &none       &kp C_NEXT
@@ -87,6 +108,13 @@
 
         layer_5 {
             label = "NUMBER";
+            
+            // --------------------------------------------------------------------------------
+            // |   %  |  -  |  9  |  8  |  7  |  /  |   |     |     |  <  |  >  |     | ...  |
+            // | BKSP |  +  |  6  |  5  |  4  |  *  |   |     | SFT | CTL | ALT | WIN | ENT  |
+            // |  ESC | ENT |  3  |  2  |  1  |  .  |   |     |     |  ,  |  .  |     |      |
+            //                    | ... |  0  |  =  |   | SPC |     | mo5 |
+            
             bindings = <
 &kp PERCENT  &kp MINUS  &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7     &kp SLASH     &none            &none  &kp LESS_THAN  &kp GREATER_THAN          &none   &none
      &trans   &kp PLUS  &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &kp ASTERISK     &none  &kp RIGHT_SHIFT      &kp RCTRL     &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
@@ -97,6 +125,13 @@
 
         layer_6 {
             label = "FUNC";
+            
+            // --------------------------------------------------------------------------------
+            // |      | F12 |  F9 |  F8 |  F7 | NUM |   |     |     |     |     |     | ...  |
+            // |      | F11 |  F6 |  F5 |  F4 | SCR |   |     | SFT | CTL | ALT | WIN |      |
+            // |      | F10 |  F3 |  F2 |  F1 | PSE |   | BT0 | BT1 | BT2 | BT3 | BT4 | BTCL |
+            //                    |     | mo6 |     |   |     | mo6 |     |
+            
             bindings = <
 &none  &kp F12  &kp F9  &kp F8  &kp F7  &kp KP_NUMLOCK           &none            &none         &none          &none          &none       &none
 &none  &kp F11  &kp F6  &kp F5  &kp F4  &kp SCROLLLOCK           &none  &kp RIGHT_SHIFT     &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_WIN       &none

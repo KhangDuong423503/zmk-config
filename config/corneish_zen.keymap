@@ -147,6 +147,9 @@
                 <&kp RIGHT>,
                 <&macro_release>,
                 <&kp LCTRL &kp LSHFT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
         sel_line: sel_line {
             compatible = "zmk,behavior-macro";
@@ -161,6 +164,9 @@
                 <&kp END>,
                 <&macro_release>,
                 <&kp LSHFT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
         sel_word_cont: sel_word_cont {
             compatible = "zmk,behavior-macro";
@@ -173,6 +179,9 @@
                 <&kp RIGHT>,
                 <&macro_release>,
                 <&kp LCTRL &kp LSHFT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
         sel_line_cont: sel_line_cont {
             compatible = "zmk,behavior-macro";
@@ -185,6 +194,9 @@
                 <&kp DOWN>,
                 <&macro_release>,
                 <&kp LSHFT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
         triple_zero: triple_zero {
             compatible = "zmk,behavior-macro";
@@ -193,6 +205,9 @@
             bindings =
                 <&macro_tap>,
                 <&kp N0 &kp N0 &kp N0>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
     };
 

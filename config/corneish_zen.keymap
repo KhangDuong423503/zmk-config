@@ -99,10 +99,10 @@
             //                    | mo4 | ... | ... |   | STP | PLY | MUT |
 
             bindings = <
- &none      &none      &none      &none       &none      &none         &none  &kp C_BRI_DN  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_UP   &kp PSCRN
-&trans   &kp LWIN   &kp LALT  &kp LCTRL  &kp LSHIFT    &kp DEL    &kp C_PREV         &none         &none         &none         &none  &kp C_NEXT
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LC(A)         &none         &none         &none         &none         &none       &none
-                                 &trans       &none      &none    &kp C_STOP      &kp C_PP    &kp C_MUTE
+ &none      &none      &none      &none      &none      &none         &none  &kp C_BRI_DN  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_UP   &kp PSCRN
+&trans   &kp LWIN   &kp LALT  &kp LCTRL  &kp LSHFT    &kp DEL    &kp C_PREV         &none         &none         &none         &none  &kp C_NEXT
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(A)         &none         &none         &none         &none         &none       &none
+                                 &trans      &none      &none    &kp C_STOP      &kp C_PP    &kp C_MUTE
             >;
         };
 

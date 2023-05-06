@@ -28,6 +28,13 @@
             timeout-ms = <50>;
             layers = <0 1>;
         };
+
+        combo_mo_tog_6 {
+            bindings = <&mo_tog_6 6 0>;
+            key-positions = <37 40>;
+            timeout-ms = <100>;
+            layers = <0 1>;
+        };
     };
 
     behaviors {
@@ -127,6 +134,103 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        td_tog_2: td_tog_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TOG_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =
+                <&none>,
+                <&tog 2>;
+        };
+        td_tog_3: td_tog_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TOG_3";
+            #binding-cells = <0>;
+            bindings =
+                <&none>,
+                <&tog 3>;
+
+            tapping-term-ms = <200>;
+        };
+        td_tog_4: td_tog_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TOG_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =
+                <&none>,
+                <&tog 4>;
+        };
+        td_tog_5: td_tog_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TOG_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =
+                <&none>,
+                <&tog 5>;
+        };
+        td_tog_6: td_tog_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TOG_6";
+            #binding-cells = <0>;
+            bindings =
+                <&none>,
+                <&tog 6>;
+
+            tapping-term-ms = <200>;
+        };
+        mo_tog_2: mo_tog_2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_2";
+            bindings =
+                <&mo>,
+                <&td_tog_2>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        mo_tog_3: mo_tog_3 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_3";
+            bindings =
+                <&mo>,
+                <&td_tog_3>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        mo_tog_4: mo_tog_4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_4";
+            bindings =
+                <&mo>,
+                <&td_tog_4>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        mo_tog_5: mo_tog_5 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_5";
+            bindings =
+                <&mo>,
+                <&td_tog_5>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        mo_tog_6: mo_tog_6 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_6";
+            bindings =
+                <&mo>,
+                <&td_tog_6>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -207,6 +311,59 @@
             wait-ms = <50>;
             tap-ms = <50>;
         };
+        win_app_right: win_app_right {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_APP_RIGHT";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp TAB>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
+        };
+        win_app_left: win_app_left {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_APP_LEFT";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT &kp LSHFT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
+        };
+        win_app_sel: win_app_sel {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_APP_SEL";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LALT>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
+        };
+        search_web: search_web {
+            compatible = "zmk,behavior-macro";
+            label = "SEARCH_WEB";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LC(C) &kp LC(T)>,
+                <&macro_wait_time 200>,
+                <&macro_tap>,
+                <&kp LC(V) &kp ENTER>;
+
+            wait-ms = <50>;
+            tap-ms = <50>;
+        };
     };
 
     keymap {
@@ -222,10 +379,10 @@
             //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
 
             bindings = <
- &kp TAB        &kp Q        &kp W         &kp F         &kp P       &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT       &cwc
-&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T       &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O  &kp ENTER
- &kp ESC        &kp Z        &kp X         &kp C         &kp D       &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI      &to 1
-                                           &mo 4         &mo 2  &osm LSHFT    &kp SPACE         &mo 3         &mo 5
+ &kp TAB        &kp Q        &kp W          &kp F          &kp P       &kp B        &kp J          &kp L          &kp U        &kp Y      &kp SQT       &cwc
+&kp BSPC  &mtl LWIN A  &mtl LALT R   &mtl LCTRL S   &mtl LSHFT T       &kp G        &kp M   &mtr RSHFT N   &mtr RCTRL E  &mtr RALT I  &mtr RWIN O  &kp ENTER
+ &kp ESC        &kp Z        &kp X          &kp C          &kp D       &kp V        &kp K          &kp H    &comma_excl    &dot_ques     &kp SEMI      &to 1
+                                    &mo_tog_4 4 0  &mo_tog_2 2 0  &osm LSHFT    &kp SPACE  &mo_tog_3 3 0  &mo_tog_5 5 0
             >;
         };
 
@@ -256,7 +413,7 @@
             //                    |     | mo2 |     |   |     | mo6 | RPT |
 
             bindings = <
- &none    &kp SQT     &kp LT    &kp GT    &kp DQT    &kp DOT     &kp AMPS      &none     &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
+&tog 2    &kp SQT     &kp LT    &kp GT    &kp DQT    &kp DOT     &kp AMPS      &none     &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
 &trans   &kp EXCL  &kp MINUS  &kp PLUS  &kp EQUAL  &kp POUND     &kp PIPE  &kp COLON     &kp LPAR  &kp RPAR  &kp QMARK    &trans
   &rst  &kp CARET   &kp FSLH  &kp STAR   &kp BSLH  &kp GRAVE    &kp TILDE   &kp DLLR     &kp LBRC  &kp RBRC     &kp AT     &none
                                  &none     &trans      &none        &none      &mo 6  &key_repeat
@@ -273,10 +430,10 @@
             //                    | LIN | mo6 | WRD |   | SPC | mo3 | APP |
 
             bindings = <
-&trans  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)     &kp INS     &none      &none      &none      &none     &none   &none
-&trans         &kp LEFT        &kp UP       &kp DOWN    &kp RIGHT     &kp DEL     &none  &kp RSHFT  &kp RCTRL   &kp RALT  &kp RWIN  &trans
-&trans        &kp LC(Z)     &kp LC(X)      &kp LC(C)    &kp LC(V)   &kp LC(A)     &none   &kp HOME  &kp PG_DN  &kp PG_UP   &kp END    &rst
-                                          &sel_lines        &mo 6  &sel_words    &trans     &trans  &kp K_APP
+&trans  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)     &kp INS     &none  &win_app_left  &win_app_sel  &win_app_right  &search_web  &tog 3
+&trans         &kp LEFT        &kp UP       &kp DOWN    &kp RIGHT     &kp DEL     &none      &kp RSHFT     &kp RCTRL        &kp RALT     &kp RWIN  &trans
+&trans        &kp LC(Z)     &kp LC(X)      &kp LC(C)    &kp LC(V)   &kp LC(A)     &none       &kp HOME     &kp PG_DN       &kp PG_UP      &kp END    &rst
+                                          &sel_lines        &mo 6  &sel_words    &trans         &trans     &kp K_APP
             >;
         };
 
@@ -290,10 +447,10 @@
             //                    | mo4 | ... | ... |   | STP | PLY | MUT |
 
             bindings = <
- &none      &none      &none      &none      &none      &none         &none  &kp C_BRI_DN  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_UP   &kp PSCRN
-&trans   &kp LWIN   &kp LALT  &kp LCTRL  &kp LSHFT    &kp DEL    &kp C_PREV         &none         &none         &none         &none  &kp C_NEXT
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(A)         &none         &none         &none         &none         &none       &none
-                                 &trans      &none      &none    &kp C_STOP      &kp C_PP    &kp C_MUTE
+&tog 4  &win_app_left      &none      &none      &none  &win_app_right         &none  &kp C_BRI_DN  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_UP   &kp PSCRN
+&trans       &kp LWIN   &kp LALT  &kp LCTRL  &kp LSHFT    &win_app_sel    &kp C_PREV         &none         &none         &none         &none  &kp C_NEXT
+&trans      &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)       &kp LC(A)         &none         &none         &none         &none         &none       &none
+                                     &trans      &none           &none    &kp C_STOP      &kp C_PP    &kp C_MUTE
             >;
         };
 
@@ -307,7 +464,7 @@
             //                    | 000 |  0  |  =  |   | SPC |     | mo5 |
 
             bindings = <
-&kp PRCNT  &kp MINUS  &kp N9        &kp N8  &kp N7  &kp SLASH     &none      &none     &kp LT    &kp GT     &none   &none
+&kp PRCNT  &kp MINUS  &kp N9        &kp N8  &kp N7  &kp SLASH     &none      &none     &kp LT    &kp GT     &none  &tog 5
    &trans   &kp PLUS  &kp N6        &kp N5  &kp N4   &kp STAR     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RWIN  &trans
    &trans  &kp ENTER  &kp N3        &kp N2  &kp N1    &kp DOT     &none      &none  &kp COMMA   &kp DOT     &none   &none
                               &triple_zero  &kp N0  &kp EQUAL    &trans      &none     &trans
@@ -324,7 +481,7 @@
             //                    |     | mo6 |     |   |     | mo6 |     |
 
             bindings = <
-&none  &kp F12  &kp F9  &kp F8  &kp F7   &kp KP_NUM    &out OUT_USB         &none         &none         &none         &none       &none
+&none  &kp F12  &kp F9  &kp F8  &kp F7   &kp KP_NUM    &out OUT_USB         &none         &none         &none         &none      &tog 6
 &none  &kp F11  &kp F6  &kp F5  &kp F4     &kp SLCK    &out OUT_BLE     &kp RSHFT     &kp RCTRL      &kp RALT      &kp RWIN       &none
 &none  &kp F10  &kp F3  &kp F2  &kp F1  &kp C_PAUSE    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
                          &none  &trans        &none           &none        &trans         &none

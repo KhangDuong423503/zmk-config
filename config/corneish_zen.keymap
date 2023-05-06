@@ -122,7 +122,7 @@
                 <&sel_word_cont>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         sel_lines: sel_lines {
             compatible = "zmk,behavior-mod-morph";
@@ -132,7 +132,7 @@
                 <&sel_line_cont>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         td_mo_tog_2: td_mo_tog_2 {
             compatible = "zmk,behavior-tap-dance";
@@ -180,6 +180,15 @@
                 <&tog 6>;
 
             tapping-term-ms = <200>;
+        };
+        td_oss_cwc: td_oss_cwc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OSS_CWC";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings =
+                <&osm LSHFT>,
+                <&cwc>;
         };
     };
 
@@ -329,10 +338,10 @@
             //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
 
             bindings = <
- &kp TAB        &kp Q        &kp W         &kp F         &kp P       &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT       &cwc
-&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T       &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O  &kp ENTER
- &kp ESC        &kp Z        &kp X         &kp C         &kp D       &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI      &to 1
-                                    &td_mo_tog_4  &td_mo_tog_2  &osm LSHFT    &kp SPACE  &td_mo_tog_3  &td_mo_tog_5
+ &kp TAB        &kp Q        &kp W         &kp F         &kp P        &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT  &key_repeat
+&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T        &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O    &kp ENTER
+ &kp ESC        &kp Z        &kp X         &kp C         &kp D        &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI        &to 1
+                                    &td_mo_tog_4  &td_mo_tog_2  &td_oss_cwc    &kp SPACE  &td_mo_tog_3  &td_mo_tog_5
             >;
         };
 

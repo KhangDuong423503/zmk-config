@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+&mmv {    
+        time-to-max-speed-ms = <500>;
+        acceleration-exponent=<1>;
+};
+&mwh {    
+        time-to-max-speed-ms = <2000>;
+        acceleration-exponent=<0>;
+};
 
 / {
     chosen {
@@ -293,7 +302,7 @@
             label = "CLMKDH";
 
             // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | RPT  |
+            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | CAPW |
             // | BKSP |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
             // |  ESC |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,! -  .? |  ;  | to1  |
             //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
@@ -330,7 +339,7 @@
             // | tog2 |  '  |  <  |  >  |  "  |  .  |   |  &  |     |  [  |  ]  |  %  | CAPS |
             // | BKSP |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | ENT  |
             // |  RST |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |      |
-            //                    |     | mo2 |     |   |     | RPT |     |
+            //                    |     | mo2 |     |   | RPT |     |     |
 
             bindings = <
 &tog 2    &kp SQT     &kp LT       &kp GT    &kp DQT    &kp DOT       &kp AMPS      &none  &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
@@ -361,16 +370,16 @@
             label = "MOUSE";
 
             // --------------------------------------------------------------------------------
-            // | tog4 | W<- | ... | ... | ... | W-> |   |     | BR- | VL- | VL+ | BR+ | PRSC |
-            // | BKSP | WIN | ALT | CTL | SFT | WSL |   | PRV | ... | ... | ... | ... | NXT  |
-            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | ... | ... | ... | ... |      |
-            //                    | mo4 | ... | ... |   | STP | PLY | MUT |
+            // | tog4 | W<- | RCL | MCL | LCL | W-> |   |     | BR- | VL- | VL+ | BR+ | PRSC |
+            // | BKSP | WIN | ALT | CTL | SFT | WSL |   | PRV | m<- | m|v | m|^ | m-> | NXT  |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | w<- | w|v | w|^ | w-> |      |
+            //                    | mo4 | w|^ | w|v |   | STP | PLY | MUT |
 
             bindings = <
-&tog 4  &win_app_left      &none      &none      &none  &win_app_right         &none  &kp C_BRI_DN  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_UP   &kp PSCRN
-&trans       &kp LWIN   &kp LALT  &kp LCTRL  &kp LSHFT    &win_app_sel    &kp C_PREV         &none         &none         &none         &none  &kp C_NEXT
-&trans      &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)       &kp LC(A)         &none         &none         &none         &none         &none       &none
-                                     &trans      &none           &none    &kp C_STOP      &kp C_PP    &kp C_MUTE
+&tog 4  &win_app_left  &mkp RCLK  &mkp MCLK             &mkp LCLK         &win_app_right         &none          &kp C_BRI_DN           &kp C_VOL_DN           &kp C_VOL_UP         &kp C_BRI_UP   &kp PSCRN
+&trans       &kp LWIN   &kp LALT  &kp LCTRL             &kp LSHFT           &win_app_sel    &kp C_PREV  &mmv MOVE_HOR(-2500)   &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500)  &mmv MOVE_HOR(2500)  &kp C_NEXT
+&trans      &kp LC(Z)  &kp LC(X)  &kp LC(C)             &kp LC(V)              &kp LC(A)         &none  &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(-15)   &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)       &none
+                                     &trans  &mwh SCROLL_VERT(15)  &mwh SCROLL_VERT(-15)    &kp C_STOP              &kp C_PP             &kp C_MUTE
             >;
         };
 

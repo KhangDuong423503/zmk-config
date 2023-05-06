@@ -360,7 +360,7 @@
             // | tog2 |  '  |  <  |  >  |  "  |  .  |   |  &  |     |  [  |  ]  |  %  | CAPS |
             // | BKSP |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | ENT  |
             // |  RST |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |      |
-            //                    |     | mo2 |     |   |     | mo6 | RPT |
+            //                    |     | mo2 |     |   |     | RPT |     |
 
             bindings = <
 &tog 2    &kp SQT     &kp LT       &kp GT    &kp DQT    &kp DOT     &kp AMPS        &none  &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
@@ -374,10 +374,10 @@
             label = "NAV";
 
             // --------------------------------------------------------------------------------
-            // |  TAB | CSt | A<- | A-> |  Ct | INS |   |     | W<- | WSL | W-> | WEB | tog3 |
+            // |  TAB | HME | PGU | PGD | END | INS |   |     | W<- | WSL | W-> | WEB | tog3 |
             // | BKSP | LFT |  UP | DWN | RGT | DEL |   |     | SFT | CTL | ALT | WIN | ENT  |
-            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | HME | PGD | PGU | END | RST  |
-            //                    | LIN | mo6 | WRD |   | SPC | mo3 | APP |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | CSt | A<- | A-> | Ct  | RST  |
+            //                    | LIN |     | WRD |   | SPC | mo3 | APP |
 
             bindings = <
 &trans   &kp HOME  &kp PG_UP   &kp PG_DN    &kp END     &kp INS     &none    &win_app_left  &win_app_sel  &win_app_right  &search_web  &tog 3

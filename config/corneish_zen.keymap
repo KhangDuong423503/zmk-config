@@ -332,7 +332,7 @@
             label = "CLMKDH";
 
             // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | CAPW |
+            // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | RPT  |
             // | BKSP |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
             // |  ESC |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,! -  .? |  ;  | to1  |
             //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |

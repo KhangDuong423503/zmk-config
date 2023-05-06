@@ -123,7 +123,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <()>;
         };
         sel_lines: sel_lines {
             compatible = "zmk,behavior-mod-morph";

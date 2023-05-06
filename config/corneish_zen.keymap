@@ -119,20 +119,21 @@
             label = "SEL_WORDS";
             bindings =
                 <&sel_word>,
-                <&sel_word_cont>;
+                <&kp LC(LS(RIGHT))>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <()>;
         };
         sel_lines: sel_lines {
             compatible = "zmk,behavior-mod-morph";
             label = "SEL_LINES";
             bindings =
                 <&sel_line>,
-                <&sel_line_cont>;
+                <&kp LS(DOWN)>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         td_mo_tog_2: td_mo_tog_2 {
             compatible = "zmk,behavior-tap-dance";
@@ -181,15 +182,6 @@
 
             tapping-term-ms = <200>;
         };
-        td_oss_cwc: td_oss_cwc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_OSS_CWC";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-                <&osm LSHFT>,
-                <&cwc>;
-        };
     };
 
     macros {
@@ -225,36 +217,6 @@
                 <&kp END>,
                 <&macro_release>,
                 <&kp LSHFT>;
-
-            wait-ms = <50>;
-            tap-ms = <50>;
-        };
-        sel_word_cont: sel_word_cont {
-            compatible = "zmk,behavior-macro";
-            label = "SEL_WORD_CONT";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp RSHFT>,
-                <&macro_tap>,
-                <&kp RIGHT>,
-                <&macro_release>,
-                <&kp LCTRL &kp RSHFT>;
-
-            wait-ms = <50>;
-            tap-ms = <50>;
-        };
-        sel_line_cont: sel_line_cont {
-            compatible = "zmk,behavior-macro";
-            label = "SEL_LINE_CONT";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RSHFT>,
-                <&macro_tap>,
-                <&kp DOWN>,
-                <&macro_release>,
-                <&kp RSHFT>;
 
             wait-ms = <50>;
             tap-ms = <50>;
@@ -338,10 +300,10 @@
             //                    | mo4 | mo2 | OSS |   | SPC | mo3 | mo5 |
 
             bindings = <
- &kp TAB        &kp Q        &kp W         &kp F         &kp P        &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT  &key_repeat
-&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T        &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O    &kp ENTER
- &kp ESC        &kp Z        &kp X         &kp C         &kp D        &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI        &to 1
-                                    &td_mo_tog_4  &td_mo_tog_2  &td_oss_cwc    &kp SPACE  &td_mo_tog_3  &td_mo_tog_5
+ &kp TAB        &kp Q        &kp W         &kp F         &kp P       &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT       &cwc
+&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T       &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O  &kp ENTER
+ &kp ESC        &kp Z        &kp X         &kp C         &kp D       &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI      &to 1
+                                    &td_mo_tog_4  &td_mo_tog_2  &osm LSHFT    &kp SPACE  &td_mo_tog_3  &td_mo_tog_5
             >;
         };
 
@@ -372,10 +334,10 @@
             //                    |     | mo2 |     |   |     | RPT |     |
 
             bindings = <
-&tog 2    &kp SQT     &kp LT       &kp GT    &kp DQT    &kp DOT     &kp AMPS        &none  &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
-&trans   &kp EXCL  &kp MINUS  &kp KP_PLUS  &kp EQUAL  &kp POUND     &kp PIPE    &kp COLON  &kp LPAR  &kp RPAR  &kp QMARK    &trans
-  &rst  &kp CARET   &kp FSLH     &kp STAR   &kp BSLH  &kp GRAVE    &kp TILDE     &kp DLLR  &kp LBRC  &kp RBRC     &kp AT     &none
-                                    &none     &trans      &none        &none  &key_repeat     &none
+&tog 2    &kp SQT     &kp LT       &kp GT    &kp DQT    &kp DOT       &kp AMPS      &none  &kp LBKT  &kp RBKT  &kp PRCNT  &kp CAPS
+&trans   &kp EXCL  &kp MINUS  &kp KP_PLUS  &kp EQUAL  &kp POUND       &kp PIPE  &kp COLON  &kp LPAR  &kp RPAR  &kp QMARK    &trans
+  &rst  &kp CARET   &kp FSLH     &kp STAR   &kp BSLH  &kp GRAVE      &kp TILDE   &kp DLLR  &kp LBRC  &kp RBRC     &kp AT     &none
+                                    &none     &trans      &none    &key_repeat      &none     &none
             >;
         };
 

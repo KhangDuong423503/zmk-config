@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 &mmv {    
-        time-to-max-speed-ms = <500>;
+        time-to-max-speed-ms = <1000>;
         acceleration-exponent=<1>;
 };
 &mwh {    
@@ -469,16 +469,16 @@
             label = "MOUSE";
 
             // --------------------------------------------------------------------------------
-            // | tog4 |     | W<- | WSL | W-> | STP |   | MUT | BR- | VL- | VL+ | BR+ | PRSC |
-            // | BKSP | WIN | ALT | CTL | SFT | PLY |   | PRV | m<- | m|v | m|^ | m-> | NXT  |
-            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   |     | w<- | w|v | w|^ | w-> |      |
+            // | tog4 | WEB | W<- | WSL | W-> |     |   | MUT | BR- | VL- | VL+ | BR+ | PRSC |
+            // | BKSP | WIN | ALT | CTL | SFT | DEL |   | PRV | m<- | m|v | m|^ | m-> | NXT  |
+            // |  ESC |  Cz |  Cx |  Cc |  Cv |  Ca |   | PLY | w<- | w|v | w|^ | w-> | STP  |
             //                    | mo4 | w|^ | w|v |   | LCL | MCL | RCL |
 
             bindings = <
-&tog_4_rel_alts      &none  &win_app_left  &win_app_sel        &win_app_right             &kp C_STOP    &kp C_MUTE          &kp C_BRI_DN           &kp C_VOL_DN           &kp C_VOL_UP         &kp C_BRI_UP   &kp PSCRN
-         &trans   &kp LWIN       &kp LALT     &kp LCTRL             &kp LSHFT               &kp C_PP    &kp C_PREV  &mmv MOVE_HOR(-2500)   &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500)  &mmv MOVE_HOR(2500)  &kp C_NEXT
-         &trans  &kp LC(Z)      &kp LC(X)     &kp LC(C)             &kp LC(V)              &kp LC(A)         &none  &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(-15)   &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)       &none
-                                                 &trans  &mwh SCROLL_VERT(15)  &mwh SCROLL_VERT(-15)     &mkp LCLK             &mkp MCLK              &mkp RCLK
+&tog_4_rel_alts  &search_web  &win_app_left  &win_app_sel        &win_app_right                  &none    &kp C_MUTE          &kp C_BRI_DN           &kp C_VOL_DN           &kp C_VOL_UP         &kp C_BRI_UP   &kp PSCRN
+         &trans     &kp LWIN       &kp LALT     &kp LCTRL             &kp LSHFT                &kp DEL    &kp C_PREV  &mmv MOVE_HOR(-2500)   &mmv MOVE_VERT(2500)  &mmv MOVE_VERT(-2500)  &mmv MOVE_HOR(2500)  &kp C_NEXT
+         &trans    &kp LC(Z)      &kp LC(X)     &kp LC(C)             &kp LC(V)              &kp LC(A)      &kp C_PP  &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(-15)   &mwh SCROLL_VERT(15)  &mwh SCROLL_HOR(15)  &kp C_STOP
+                                                   &trans  &mwh SCROLL_VERT(15)  &mwh SCROLL_VERT(-15)     &mkp LCLK             &mkp MCLK              &mkp RCLK
             >;
         };
 
@@ -486,16 +486,16 @@
             label = "NUMBER";
 
             // --------------------------------------------------------------------------------
-            // |   %  |  -  |  9  |  8  |  7  |  /  |   |     |     |  <  |  >  |     | tog5 |
-            // | BKSP |  +  |  6  |  5  |  4  |  *  |   |     | SFT | CTL | ALT | WIN | ENT  |
-            // |  ESC | ENT |  3  |  2  |  1  |  .  |   |     |     |  ,  |  .  |     |      |
-            //                    | 000 |  0  |  =  |   | SPC |     | mo5 |
+            // |   %  |  -  |  7  |  8  |  9  |  /  |   |     |     |  <  |  >  |     | tog5 |
+            // | BKSP |  +  |  4  |  5  |  6  |  *  |   |     | SFT | CTL | ALT | WIN | ENT  |
+            // |  000 | ENT |  1  |  2  |  3  |  =  |   |     |     |  ,  |  .  |     |      |
+            //                    |  .  |  0  | SPC |   | SPC |     | mo5 |
 
             bindings = <
-&kp PRCNT  &kp MINUS  &kp N9        &kp N8  &kp N7  &kp SLASH     &none      &none     &kp LT    &kp GT     &none  &tog 5
-   &trans   &kp PLUS  &kp N6        &kp N5  &kp N4   &kp STAR     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RWIN  &trans
-   &trans  &kp ENTER  &kp N3        &kp N2  &kp N1    &kp DOT     &none      &none  &kp COMMA   &kp DOT     &none   &none
-                              &triple_zero  &kp N0  &kp EQUAL    &trans      &none     &trans
+   &kp PRCNT  &kp KP_MINUS  &kp N7      &kp N8  &kp N9     &kp KP_SLASH     &none      &none     &kp LT      &kp GT     &none  &tog 5
+      &trans   &kp KP_PLUS  &kp N4      &kp N5  &kp N6  &kp KP_MULTIPLY     &none  &kp RSHFT  &kp RCTRL    &kp RALT  &kp RWIN  &trans
+&triple_zero     &kp ENTER  &kp N1      &kp N2  &kp N3        &kp EQUAL     &none      &none  &kp COMMA  &kp KP_DOT     &none   &none
+                                    &kp KP_DOT  &kp N0        &kp SPACE    &trans      &none     &trans
             >;
         };
 
@@ -503,16 +503,16 @@
             label = "FUNC";
 
             // --------------------------------------------------------------------------------
-            // |      | F12 |  F9 |  F8 |  F7 | NUM |   | USB |     |     |     |     | tog6 |
-            // |      | F11 |  F6 |  F5 |  F4 | SCR |   | BLE | SFT | CTL | ALT | WIN |      |
-            // |      | F10 |  F3 |  F2 |  F1 | PSE |   | BT0 | BT1 | BT2 | BT3 | BT4 | BTCL |
+            // |      | F12 |  F7 |  F8 |  F9 | NUM |   | USB |     |     |     |     | tog6 |
+            // |      | F11 |  F4 |  F5 |  F6 | SCR |   | BLE | SFT | CTL | ALT | WIN |      |
+            // |      | F10 |  F1 |  F2 |  F3 | PBR |   | BT0 | BT1 | BT2 | BT3 | BT4 | BTCL |
             //                    |     | mo6 |     |   |     | mo6 |     |
 
             bindings = <
-&none  &kp F12  &kp F9  &kp F8  &kp F7   &kp KP_NUM    &out OUT_USB         &none         &none         &none         &none      &tog 6
-&none  &kp F11  &kp F6  &kp F5  &kp F4     &kp SLCK    &out OUT_BLE     &kp RSHFT     &kp RCTRL      &kp RALT      &kp RWIN       &none
-&none  &kp F10  &kp F3  &kp F2  &kp F1  &kp C_PAUSE    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-                         &none  &trans        &none           &none        &trans         &none
+&none  &kp F12  &kp F7  &kp F8  &kp F9       &kp KP_NUM    &out OUT_USB         &none         &none         &none         &none      &tog 6
+&none  &kp F11  &kp F4  &kp F5  &kp F6         &kp SLCK    &out OUT_BLE     &kp RSHFT     &kp RCTRL      &kp RALT      &kp RWIN       &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+                         &none  &trans            &none           &none        &trans         &none
             >;
         };
     };

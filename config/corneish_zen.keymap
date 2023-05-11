@@ -250,7 +250,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings =
-                <&lt 2>,
+                <&sl 2>,
                 <&tog 2>;
         };
         td_mo_tog_3: td_mo_tog_3 {
@@ -277,7 +277,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings =
-                <&lt 5>,
+                <&sl 5>,
                 <&tog 5>;
         };
         td_mo_tog_6: td_mo_tog_6 {
@@ -286,7 +286,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings =
-                <&lt 6>,
+                <&sl 6>,
                 <&tog 6>;
         };
     };

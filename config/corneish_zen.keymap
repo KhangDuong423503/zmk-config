@@ -508,7 +508,7 @@
 
             bindings = <
  &kp TAB        &kp Q        &kp W         &kp F         &kp P       &kp B        &kp J         &kp L         &kp U        &kp Y      &kp SQT       &cwc
-&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T       &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr RALT I  &mtr RWIN O  &kp ENTER
+&kp BSPC  &mtl LWIN A  &mtl LALT R  &mtl LCTRL S  &mtl LSHFT T       &kp G        &kp M  &mtr RSHFT N  &mtr RCTRL E  &mtr LALT I  &mtr RWIN O  &kp ENTER
  &kp ESC        &kp Z        &kp X         &kp C         &kp D       &kp V        &kp K         &kp H   &comma_excl    &dot_ques     &kp SEMI      &to 1
                                     &td_sl_tog_4  &td_sl_tog_2  &osm LSHFT    &kp SPACE  &td_sl_tog_3  &td_sl_tog_5
             >;
@@ -525,7 +525,7 @@
 
             bindings = <
 &trans        &kp Q        &kp W         &kp E         &kp R   &kp T     &kp Y         &kp U         &kp I        &kp O          &kp P  &trans
-&trans  &mtl LWIN A  &mtl LALT S  &mtl LCTRL D  &mtl LSHFT F   &kp G     &kp H  &mtr RSHFT J  &mtr RCTRL K  &mtr RALT L  &mtr RWIN SQT  &trans
+&trans  &mtl LWIN A  &mtl LALT S  &mtl LCTRL D  &mtl LSHFT F   &kp G     &kp H  &mtr RSHFT J  &mtr RCTRL K  &mtr LALT L  &mtr RWIN SQT  &trans
 &trans        &kp Z        &kp X         &kp C         &kp V   &kp B     &kp N         &kp M        &trans       &trans         &trans   &to 0
                                         &trans        &trans  &trans    &trans        &trans        &trans
             >;
@@ -542,7 +542,7 @@
 
             bindings = <
 &tog 2         &kp SQT           &kp LT              &kp GT           &kp DQT    &kp DOT       &kp AMPS       &html_close         &kp LBKT        &kp RBKT        &kp PRCNT  &kp CAPS
-&trans  &mtl LWIN EXCL  &mtl LALT MINUS  &mtl LCTRL KP_PLUS  &mtl LSHFT EQUAL  &kp POUND       &kp PIPE  &mtr RSHFT COLON  &mtr RCTRL LPAR  &mtr RALT RPAR  &mtr RWIN QMARK    &trans
+&trans  &mtl LWIN EXCL  &mtl LALT MINUS  &mtl LCTRL KP_PLUS  &mtl LSHFT EQUAL  &kp POUND       &kp PIPE  &mtr RSHFT COLON  &mtr RCTRL LPAR  &mtr LALT RPAR  &mtr RWIN QMARK    &trans
   &rst       &kp CARET         &kp FSLH            &kp STAR          &kp BSLH  &kp GRAVE      &kp TILDE          &kp DLLR         &kp LBRC        &kp RBRC           &kp AT     &none
                                                   &kp K_APP            &trans      &none    &key_repeat             &none            &none
             >;
@@ -559,7 +559,7 @@
 
             bindings = <
 &trans   &kp HOME  &kp PG_UP   &kp PG_DN    &kp END     &kp INS     &none      &kp LS(TAB)      &kp LALT      &swap_nav  &search_web  &tog 3
-&trans   &kp LEFT     &kp UP    &kp DOWN  &kp RIGHT     &kp DEL     &none       &osm RSHFT    &osm RCTRL      &osm RALT    &osm RWIN  &trans
+&trans   &kp LEFT     &kp UP    &kp DOWN  &kp RIGHT     &kp DEL     &none       &osm RSHFT    &osm RCTRL      &osm LALT    &osm RWIN  &trans
 &trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)   &kp LC(A)     &none  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)    &rst
                               &sel_lines      &none  &sel_words    &trans           &trans         &none
             >;
@@ -593,7 +593,7 @@
 
             bindings = <
    &kp PRCNT  &kp KP_MINUS  &kp N7      &kp N8  &kp N9     &kp KP_SLASH     &none       &none      &kp LT      &kp GT      &none  &tog 5
-      &trans   &kp KP_PLUS  &kp N4      &kp N5  &kp N6  &kp KP_MULTIPLY     &none  &osm RSHFT  &osm RCTRL   &osm RALT  &osm RWIN  &trans
+      &trans   &kp KP_PLUS  &kp N4      &kp N5  &kp N6  &kp KP_MULTIPLY     &none  &osm RSHFT  &osm RCTRL   &osm LALT  &osm RWIN  &trans
 &triple_zero     &kp ENTER  &kp N1      &kp N2  &kp N3        &kp EQUAL     &none       &none   &kp COMMA  &kp KP_DOT      &none   &none
                                     &kp KP_DOT  &kp N0        &kp SPACE    &trans       &none      &trans
             >;
@@ -610,7 +610,7 @@
 
             bindings = <
 &none  &kp F12  &kp F7  &kp F8  &kp F9       &kp KP_NUM    &out OUT_USB         &none         &none         &none         &none      &tog 6
-&none  &kp F11  &kp F4  &kp F5  &kp F6         &kp SLCK    &out OUT_BLE    &osm RSHFT    &osm RCTRL     &osm RALT     &osm RWIN       &none
+&none  &kp F11  &kp F4  &kp F5  &kp F6         &kp SLCK    &out OUT_BLE    &osm RSHFT    &osm RCTRL     &osm LALT     &osm RWIN       &none
 &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
                          &none  &trans            &none           &none        &trans         &none
             >;

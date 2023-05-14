@@ -575,10 +575,10 @@
             //                    | mo4 | w|^ | w|v |   | LCL | MCL | RCL |
 
             bindings = <
-&tog 4  &search_web  &kp LS(TAB)   &kp LALT       &swap_mse         &kp ENTER    &kp C_MUTE      &kp C_BRI_DN      &kp C_VOL_DN    &kp C_VOL_UP       &kp C_BRI_UP   &kp PSCRN
-&trans     &kp LWIN     &kp LALT  &kp LCTRL       &kp LSHFT           &kp DEL    &kp C_PREV  &mmv_left_change  &mmv_down_change  &mmv_up_change  &mmv_right_change  &kp C_NEXT
-&trans    &kp LC(Z)    &kp LC(X)  &kp LC(C)       &kp LC(V)         &kp LC(A)      &kp C_PP  &mwh_left_change  &mwh_down_change  &mwh_up_change  &mwh_right_change  &kp C_STOP
-                                     &trans  &mwh_up_change  &mwh_down_change     &mkp LCLK         &mkp MCLK         &mkp RCLK
+&tog 4  &search_web  &kp LS(TAB)    &kp LALT       &swap_mse         &kp ENTER    &kp C_MUTE      &kp C_BRI_DN      &kp C_VOL_DN    &kp C_VOL_UP       &kp C_BRI_UP   &kp PSCRN
+&trans    &osm LWIN    &osm LALT  &osm LCTRL      &osm LSHFT           &kp DEL    &kp C_PREV  &mmv_left_change  &mmv_down_change  &mmv_up_change  &mmv_right_change  &kp C_NEXT
+&trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)       &kp LC(V)         &kp LC(A)      &kp C_PP  &mwh_left_change  &mwh_down_change  &mwh_up_change  &mwh_right_change  &kp C_STOP
+                                      &trans  &mwh_up_change  &mwh_down_change     &mkp LCLK         &mkp MCLK         &mkp RCLK
             >;
         };
 

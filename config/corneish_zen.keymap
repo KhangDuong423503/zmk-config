@@ -248,90 +248,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
+        
         mwh_left_change: mwh_left_change {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-tap-dance";
             label = "MWH_LEFT_CHANGE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings =
                 <&mwh SCROLL_HOR(-15)>,
-                <&mwh_left_slow_fast>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mwh_left_slow_fast: mwh_left_slow_fast {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MWH_LEFT_SLOW_FAST";
-            bindings =
-                <&mwh SCROLL_HOR(-5)>,
-                <&mwh SCROLL_HOR(-50)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+                <&mwh SCROLL_HOR(-75)>;
         };
         mwh_down_change: mwh_down_change {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-tap-dance";
             label = "MWH_DOWN_CHANGE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings =
                 <&mwh SCROLL_VERT(-15)>,
-                <&mwh_down_slow_fast>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mwh_down_slow_fast: mwh_down_slow_fast {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MWH_DOWN_SLOW_FAST";
-            bindings =
-                <&mwh SCROLL_VERT(-5)>,
-                <&mwh SCROLL_VERT(-50)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+                <&mwh SCROLL_VERT(-75)>;
         };
         mwh_up_change: mwh_up_change {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-tap-dance";
             label = "MWH_UP_CHANGE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings =
                 <&mwh SCROLL_VERT(15)>,
-                <&mwh_up_slow_fast>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mwh_up_slow_fast: mwh_up_slow_fast {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MWH_UP_SLOW_FAST";
-            bindings =
-                <&mwh SCROLL_VERT(5)>,
-                <&mwh SCROLL_VERT(50)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+                <&mwh SCROLL_VERT(75)>;
         };
         mwh_right_change: mwh_right_change {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-tap-dance";
             label = "MWH_RIGHT_CHANGE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings =
                 <&mwh SCROLL_HOR(15)>,
-                <&mwh_right_slow_fast>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mwh_right_slow_fast: mwh_right_slow_fast {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MWH_RIGHT_SLOW_FAST";
-            bindings =
-                <&mwh SCROLL_HOR(5)>,
-                <&mwh SCROLL_HOR(50)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+                <&mwh SCROLL_HOR(75)>;
         };
 
         td_sl_tog_2: td_sl_tog_2 {
@@ -558,7 +510,7 @@
             //                    | LIN |     | WRD |   | SPC | mo3 |     |
 
             bindings = <
-&trans   &kp HOME  &kp PG_UP   &kp PG_DN    &kp END     &kp INS     &none      &kp LS(TAB)      &kp LALT      &swap_nav  &search_web  &tog 3
+&trans   &kp HOME  &kp PG_UP   &kp PG_DN    &kp END     &kp INS     &none      &kp LS(TAB)         &none      &swap_nav  &search_web  &tog 3
 &trans   &kp LEFT     &kp UP    &kp DOWN  &kp RIGHT     &kp DEL     &none       &osm RSHFT    &osm RCTRL      &osm LALT    &osm RWIN  &trans
 &trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)   &kp LC(A)     &none  &kp LC(LS(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)    &rst
                               &sel_lines      &none  &sel_words    &trans           &trans         &none
@@ -575,7 +527,7 @@
             //                    | mo4 | w|^ | w|v |   | LCL | MCL | RCL |
 
             bindings = <
-&tog 4  &search_web  &kp LS(TAB)   &kp LALT       &swap_mse         &kp ENTER    &kp C_MUTE      &kp C_BRI_DN      &kp C_VOL_DN    &kp C_VOL_UP       &kp C_BRI_UP   &kp PSCRN
+&tog 4  &search_web  &kp LS(TAB)      &none       &swap_mse         &kp ENTER    &kp C_MUTE      &kp C_BRI_DN      &kp C_VOL_DN    &kp C_VOL_UP       &kp C_BRI_UP   &kp PSCRN
 &trans     &kp LWIN     &kp LALT  &kp LCTRL       &kp LSHFT           &kp DEL    &kp C_PREV  &mmv_left_change  &mmv_down_change  &mmv_up_change  &mmv_right_change  &kp C_NEXT
 &trans    &kp LC(Z)    &kp LC(X)  &kp LC(C)       &kp LC(V)         &kp LC(A)      &kp C_PP  &mwh_left_change  &mwh_down_change  &mwh_up_change  &mwh_right_change  &kp C_STOP
                                      &trans  &mwh_up_change  &mwh_down_change     &mkp LCLK         &mkp MCLK         &mkp RCLK
